@@ -18,6 +18,9 @@ namespace EventsAndDelegatesDemo
         public delegate void ReportSpeedEventHandler(CarSpeedEventArgs e);
         public event ReportSpeedEventHandler ReportSpeed;
 
+        // EventHandler syntax
+        public event EventHandler<CarNameChangingEventArgs> NameChanging;
+
         private string _name;
 
         public Car(string Name)
@@ -30,6 +33,7 @@ namespace EventsAndDelegatesDemo
             get => _name;
             set
             {
+                OnNameChanging(_name, value);
                 _name = value;
             }
         }
@@ -58,6 +62,14 @@ namespace EventsAndDelegatesDemo
                 }
             }
             OnReachedTopSpeed();
+        }
+
+        protected virtual void OnNameChanging(string OldName, string NewName)
+        {
+            if (NameChanging != null)
+            {
+                NameChanging(null, new CarNameChangingEventArgs(OldName, NewName));
+            }
         }
 
         private void OnReportSpeed(int kphSpeed)

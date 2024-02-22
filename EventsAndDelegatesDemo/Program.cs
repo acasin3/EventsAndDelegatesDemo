@@ -11,8 +11,15 @@ namespace EventsAndDelegatesDemo
             c.ApproachingSpeedOfSound += ApproachingSpeedOfSound;
             c.SpeedOfSoundReached += SpeedOfSoundReached;
             c.ReachedTopSpeed += ReachedTopSpeed;
+            c.NameChanging += NameChanging;
+            c.Name = "Lightning McQueen";
             c.Accelerate();
             Console.ReadLine();
+        }
+
+        private static void NameChanging(object sender, CarNameChangingEventArgs e)
+        {
+            Console.WriteLine(String.Format("Old Name : {0}; New Name : {1}", e.OldName, e.NewName));
         }
 
         private static void ReportSpeed(CarSpeedEventArgs e)

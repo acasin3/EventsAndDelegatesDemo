@@ -20,3 +20,6 @@ Assuming the Car class must raise an event once it reaches the speed of sound of
 ### Adding the ReportSpeed Event
 
 As the car accelerates, this event reports the car speed in multiples of 100, which can be displayed in the console application. Note that this speed is contained in the CarSpeedEventArgs argument.
+
+### Adding the NameChanging Event
+This event uses the EventHandler syntax to raise an event whenever the car name changes. This uses the CarNameChangingEventArgs which has access to the old and new names.
