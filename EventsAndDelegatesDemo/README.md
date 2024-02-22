@@ -16,3 +16,7 @@ Assuming the Car class must raise an event once it reaches its top speed of 1,35
 ### Adding the SpeedOfSoundReached Event
 
 Assuming the Car class must raise an event once it reaches the speed of sound of 1,235 km/hr, the code needed to achieve that is shown in this commit.
+
+### Adding the ReportSpeed Event
+
+As the car accelerates, this event reports the car speed in multiples of 100, which can be displayed in the console application. Note that this speed is contained in the CarSpeedEventArgs argument.
