@@ -12,3 +12,7 @@ The console application creates an instance of the Car class and calls its Accel
 ### Adding the ReachedTopSpeed Event
 
 Assuming the Car class must raise an event once it reaches its top speed of 1,350 km/hr, the code needed to achieve that is shown in this commit.
+
+### Adding the SpeedOfSoundReached Event
+
+Assuming the Car class must raise an event once it reaches the speed of sound of 1,235 km/hr, the code needed to achieve that is shown in this commit.
