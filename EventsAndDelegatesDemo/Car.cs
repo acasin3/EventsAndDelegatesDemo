@@ -4,6 +4,10 @@ namespace EventsAndDelegatesDemo
 {
     public class Car
     {
+        // Delegates without EventArgs
+        public delegate void ReachedTopSpeedEventHandler();
+        public event ReachedTopSpeedEventHandler ReachedTopSpeed;
+
         private string _name;
 
         public Car(string Name)
@@ -27,6 +31,13 @@ namespace EventsAndDelegatesDemo
             {
                 kphSpeed++;
             }
+            OnReachedTopSpeed();
+        }
+
+        private void OnReachedTopSpeed()
+        {
+            if (ReachedTopSpeed != null)
+                ReachedTopSpeed();
         }
     }
 }
